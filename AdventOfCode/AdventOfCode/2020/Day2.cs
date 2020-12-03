@@ -5,12 +5,12 @@ namespace AdventOfCode2020
 {
     class Day2
     {
-        private static readonly string baseInputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day2.txt";
 
         public static int Problem1()
         {
             int validPasswords = 0;
-            var input = File.ReadAllLines($@"{baseInputPath}\Day2.txt");
+            var input = File.ReadAllLines(inputPath);
 
             foreach (var line in input)
             {
@@ -34,7 +34,7 @@ namespace AdventOfCode2020
         public static int Problem2()
         {
             int validPasswords = 0;
-            var input = File.ReadAllLines($@"{baseInputPath}\Day2.txt");
+            var input = File.ReadAllLines(inputPath);
 
             foreach (var line in input)
             {

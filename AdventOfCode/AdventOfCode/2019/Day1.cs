@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace AdventOfCode2019
 {
     class Day1
     {
-        private static readonly string baseInputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2019\Inputs";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2019\Inputs\Day1.txt";
 
         public static int Problem1()
         {
-            var modules = File.ReadAllLines($@"{baseInputPath}\Day1.txt").Select(m => int.Parse(m));
+            var modules = File.ReadAllLines(inputPath).Select(m => int.Parse(m));
             int totalFuel = 0;
 
             foreach (var module in modules)
@@ -26,7 +24,7 @@ namespace AdventOfCode2019
 
         public static int Problem2()
         {
-            var modules = File.ReadAllLines($@"{baseInputPath}\Day1.txt").Select(m => int.Parse(m));
+            var modules = File.ReadAllLines(inputPath).Select(m => int.Parse(m));
             int totalFuel = 0;
 
             foreach (var module in modules)

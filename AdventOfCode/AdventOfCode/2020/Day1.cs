@@ -5,11 +5,11 @@ namespace AdventOfCode2020
 {
     public static class Day1
     {
-        private static readonly string baseInputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day1.txt";
 
         public static int Problem1()
         {
-            var input = File.ReadAllLines($@"{baseInputPath}\Day1.txt");
+            var input = File.ReadAllLines(inputPath);
 
             var numbers = input.Select(s => int.Parse(s)).ToList();
 
@@ -29,7 +29,7 @@ namespace AdventOfCode2020
 
         public static int Problem2()
         {
-            var input = File.ReadAllLines($@"{baseInputPath}\Day1.txt");
+            var input = File.ReadAllLines(inputPath);
             var numbers = input.Select(s => int.Parse(s)).ToList();
 
             for (int i = 0; i < numbers.Count - 2; i++)

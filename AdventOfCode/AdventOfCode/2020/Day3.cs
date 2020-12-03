@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
     class Day3
     {
-        private static readonly string baseInputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs";
-
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day3.txt";
+        
         public static int Problem1()
         {
-            var map = File.ReadAllLines($@"{baseInputPath}\Day3.txt");
+            var map = File.ReadAllLines(inputPath);
 
             int stepsRight = 3;
             int stepsDown = 1;
-            
+
             int trees = TraverseMap(map, stepsRight, stepsDown);
 
             return trees;
@@ -24,7 +21,7 @@ namespace AdventOfCode2020
 
         public static int Problem2()
         {
-            var map = File.ReadAllLines($@"{baseInputPath}\Day3.txt");
+            var map = File.ReadAllLines(inputPath);
             var answer = 1;
 
             var slopes = new List<(int StepsRight, int StepsDown)>
@@ -38,7 +35,7 @@ namespace AdventOfCode2020
 
             foreach (var slope in slopes)
             {
-               answer *= TraverseMap(map, slope.StepsRight, slope.StepsDown);
+                answer *= TraverseMap(map, slope.StepsRight, slope.StepsDown);
             }
 
             return answer;
