@@ -1,0 +1,13 @@
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.exe
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.deps.json
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.runtimeconfig.json
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.runtimeconfig.dev.json
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.dll
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\bin\Debug\netcoreapp3.1\AdventOfCode.pdb
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.csprojAssemblyReference.cache
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.AssemblyInfoInputs.cache
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.AssemblyInfo.cs
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.csproj.CoreCompileInputs.cache
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.dll
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.pdb
+C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\obj\Debug\netcoreapp3.1\AdventOfCode.genruntimeconfig.cache
