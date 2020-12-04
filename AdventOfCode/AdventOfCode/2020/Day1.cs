@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode2020
 {
-    public static class Day1
+    public class Day1
     {
         private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day1.txt";
 

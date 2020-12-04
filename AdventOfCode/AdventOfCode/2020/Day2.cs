@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
-    class Day2
+    public class Day2
     {
         private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day2.txt";
 

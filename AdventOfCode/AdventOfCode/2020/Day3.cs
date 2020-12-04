@@ -3,10 +3,10 @@ using System.IO;
 
 namespace AdventOfCode2020
 {
-    class Day3
+    public class Day3
     {
         private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day3.txt";
-        
+
         public static int Problem1()
         {
             var map = File.ReadAllLines(inputPath);
