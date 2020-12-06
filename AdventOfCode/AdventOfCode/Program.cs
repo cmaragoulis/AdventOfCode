@@ -9,7 +9,7 @@ namespace AdventOfCode
         {
             var sw = Stopwatch.StartNew();
 
-            var answer = AdventOfCode2020.Day5.Problem2();
+            var answer = AdventOfCode2020.Day6.Problem2();
 
             sw.Stop();
 
