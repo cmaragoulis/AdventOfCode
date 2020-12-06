@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode2019
 {
-    class Day1
+    public class Day1
     {
         private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2019\Inputs\Day1.txt";
 
