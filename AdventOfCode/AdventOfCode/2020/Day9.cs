@@ -29,7 +29,6 @@ namespace AdventOfCode2020
 
             long weakNumber = FindWeakNumber(preamble, input);
 
-
             return FindEncryptionWeakness(input, weakNumber);
         }
 
