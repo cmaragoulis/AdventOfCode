@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
-    public class Day8
+    public class Day08
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day8.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day08.txt";
 
         public static int Problem1()
         {

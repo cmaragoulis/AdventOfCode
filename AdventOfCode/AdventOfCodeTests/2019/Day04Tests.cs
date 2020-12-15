@@ -8,7 +8,7 @@ using Xunit;
 
 namespace AdventOfCodeTests2019
 {
-    public class Day4Tests
+    public class Day04Tests
     {
         [Theory]
         [InlineData(111111, true)]
@@ -24,7 +24,7 @@ namespace AdventOfCodeTests2019
             //Arrange
 
             //Act
-            var actualValidity = Day4.IsValidPassword(password);
+            var actualValidity = Day04.IsValidPassword(password);
 
             //Assert
             Assert.Equal(expectedValidity, actualValidity);
@@ -43,7 +43,7 @@ namespace AdventOfCodeTests2019
             //Arrange
 
             //Act
-            var actualValidity = Day4.IsValidPassword2(password);
+            var actualValidity = Day04.IsValidPassword2(password);
 
             //Assert
             Assert.Equal(expectedValidity, actualValidity);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2019
 {
-    public class Day4
+    public class Day04
     {
         public static int Problem1()
         {

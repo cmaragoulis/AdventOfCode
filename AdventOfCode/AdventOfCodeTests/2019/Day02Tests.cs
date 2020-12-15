@@ -2,7 +2,7 @@ using Xunit;
 
 namespace AdventOfCodeTests
 {
-    public class Day2Tests
+    public class Day02Tests
     {
         [Theory]
         [InlineData("1,9,10,3,2,3,11,0,99,30,40,50", "3500,9,10,70,2,3,11,0,99,30,40,50")]
@@ -15,7 +15,7 @@ namespace AdventOfCodeTests
             // Arrange
 
             // Act
-            var actualOutput = string.Join(',', AdventOfCode2019.Day2.ExecuteProgram(input));
+            var actualOutput = string.Join(',', AdventOfCode2019.Day02.ExecuteProgram(input));
 
             // Assert
             Assert.Equal(expectedOutput, actualOutput);

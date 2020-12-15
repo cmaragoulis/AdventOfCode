@@ -3,7 +3,7 @@ using Xunit;
 
 namespace AdventOfCodeTests2020
 {
-    public class Day4Tests
+    public class Day04Tests
     {
         [Fact]
         public void IsValidStrict_Correctly_ValidatesPassports()
@@ -36,8 +36,8 @@ namespace AdventOfCodeTests2020
                             "",
                             "iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719" };
 
-            var invalidPassports = Day4.ExtractPassports(invalidPassportsInput);
-            var validPassports = Day4.ExtractPassports(validPassportsInput);
+            var invalidPassports = Day04.ExtractPassports(invalidPassportsInput);
+            var validPassports = Day04.ExtractPassports(validPassportsInput);
 
             foreach (var invalidPassport in invalidPassports)
             {

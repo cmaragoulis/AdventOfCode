@@ -4,17 +4,17 @@ using Xunit;
 
 namespace AdventOfCodeTests2020
 {
-    public class Day7Tests
+    public class Day07Tests
     {
         [Theory]
         [MemberData(nameof(TestData))]
         public static void Test(List<string> input, string bag, int expectedAnswer)
         {
             //Arrange
-            var rules = Day7.ExtractRulesFromInput(input);
+            var rules = Day07.ExtractRulesFromInput(input);
 
             //Act
-            var actualAnswer = Day7.CountContainedBags(bag, rules);
+            var actualAnswer = Day07.CountContainedBags(bag, rules);
 
             //Assert
             Assert.Equal(expectedAnswer, actualAnswer);

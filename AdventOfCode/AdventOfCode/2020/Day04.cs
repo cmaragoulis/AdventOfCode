@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
-    public class Day4
+    public class Day04
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day4.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day04.txt";
 
         public static int Problem1()
         {

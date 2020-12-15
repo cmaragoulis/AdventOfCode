@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2019
 {
-    public class Day3Tests
+    public class Day03Tests
     {
         [Theory]
         [InlineData("R8,U5,L5,D3", "U7,R6,D4,L4", 6)]
@@ -13,7 +13,7 @@ namespace AdventOfCode2019
             //Arrange
 
             //Act
-            int actualOutput = Day3.CalculateClosestIntersection(wire1, wire2, ClosestCriterion.Distance);
+            int actualOutput = Day03.CalculateClosestIntersection(wire1, wire2, ClosestCriterion.Distance);
 
             //Assert
             Assert.Equal(expectedOutput, actualOutput);
@@ -28,7 +28,7 @@ namespace AdventOfCode2019
             //Arrange
 
             //Act
-            int actualOutput = Day3.CalculateClosestIntersection(wire1, wire2, ClosestCriterion.Steps);
+            int actualOutput = Day03.CalculateClosestIntersection(wire1, wire2, ClosestCriterion.Steps);
 
             //Assert
             Assert.Equal(expectedOutput, actualOutput);

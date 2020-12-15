@@ -4,7 +4,7 @@ using Xunit;
 
 namespace AdventOfCodeTests2020
 {
-    public class Day9Tests
+    public class Day09Tests
     {
         [Fact]
         public static void FindWeakNumber_Finds_CorrectResult()
@@ -18,7 +18,7 @@ namespace AdventOfCodeTests2020
             var expectedAnswer = 127;
 
             //Act
-            var actualAnswer = Day9.FindWeakNumber(preamble, numbers);
+            var actualAnswer = Day09.FindWeakNumber(preamble, numbers);
 
             //Assert
             Assert.Equal(expectedAnswer, actualAnswer);
@@ -36,7 +36,7 @@ namespace AdventOfCodeTests2020
             var expectedAnswer = 62;
 
             //Act
-            var actualAnswer = Day9.FindEncryptionWeakness(numbers, weakNumber);
+            var actualAnswer = Day09.FindEncryptionWeakness(numbers, weakNumber);
 
             //Assert
             Assert.Equal(expectedAnswer, actualAnswer);

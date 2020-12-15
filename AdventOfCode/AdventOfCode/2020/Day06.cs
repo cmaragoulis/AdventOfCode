@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace AdventOfCode2020
 {
-    public class Day6
+    public class Day06
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day6.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day06.txt";
 
         public static int Problem1()
         {

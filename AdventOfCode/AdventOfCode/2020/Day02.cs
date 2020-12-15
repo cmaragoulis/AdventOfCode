@@ -3,9 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
 {
-    public class Day2
+    public class Day02
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day2.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day02.txt";
 
         public static int Problem1()
         {

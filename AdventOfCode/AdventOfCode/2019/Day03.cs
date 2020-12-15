@@ -19,9 +19,9 @@ namespace AdventOfCode2019
         Distance, Steps
     }
 
-    public class Day3
+    public class Day03
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2019\Inputs\Day3.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2019\Inputs\Day03.txt";
 
         public static int Problem1()
         {

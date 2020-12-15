@@ -9,9 +9,9 @@ namespace AdventOfCode2020
         Row, Column
     }
 
-    public class Day5
+    public class Day05
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day5.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day05.txt";
 
         public static int Problem1()
         {

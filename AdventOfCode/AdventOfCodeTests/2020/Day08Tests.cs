@@ -3,7 +3,7 @@ using Xunit;
 
 namespace AdventOfCodeTests2020
 {
-    public class Day8Tests
+    public class Day08Tests
     {
         [Fact]
         public static void ExecuteProgram_Outputs_CorrectResult()
@@ -20,11 +20,11 @@ namespace AdventOfCodeTests2020
             "jmp -4",
             "acc +6"
             };
-            var program = Day8.ParseInput(input);
+            var program = Day08.ParseInput(input);
             var expectedOutput = 5;
 
             //Act
-            var actualOutput = Day8.ExecuteProgram(program);
+            var actualOutput = Day08.ExecuteProgram(program);
 
             //Asser
             Assert.Equal(expectedOutput, actualOutput);
@@ -45,12 +45,12 @@ namespace AdventOfCodeTests2020
             "jmp -4",
             "acc +6"
             };
-            var program = Day8.ParseInput(input);
+            var program = Day08.ParseInput(input);
             var expectedOutput = 8;
 
             //Act
-            Day8.FixCorruptProgram(program);
-            var actualOutput = Day8.ExecuteProgram(program);
+            Day08.FixCorruptProgram(program);
+            var actualOutput = Day08.ExecuteProgram(program);
 
             //Asser
             Assert.Equal(expectedOutput, actualOutput);

@@ -3,9 +3,9 @@ using System.IO;
 
 namespace AdventOfCode2020
 {
-    public class Day3
+    public class Day03
     {
-        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day3.txt";
+        private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day03.txt";
 
         public static int Problem1()
         {

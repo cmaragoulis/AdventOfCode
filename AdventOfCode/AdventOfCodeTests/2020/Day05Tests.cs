@@ -3,7 +3,7 @@ using Xunit;
 
 namespace AdventOfCodeTests2020
 {
-    public class Day5Tests
+    public class Day05Tests
     {
         [Theory]
         [InlineData("FBFBBFFRLR", 357)]
@@ -15,7 +15,7 @@ namespace AdventOfCodeTests2020
             //Arrange
 
             //Act
-            var actualSeatId = Day5.DecodeBoardingPass(boardingPass);
+            var actualSeatId = Day05.DecodeBoardingPass(boardingPass);
 
             //Assert
             Assert.Equal(expectedSeatId, actualSeatId);
