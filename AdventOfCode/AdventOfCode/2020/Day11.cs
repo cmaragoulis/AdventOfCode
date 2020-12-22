@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace AdventOfCode2020
 {
+    public enum OccupiedRule
+    {
+        Adjacent, LineOfSight
+    }
+
     public class Day11
     {
         private static readonly string inputPath = @"C:\Projects\Advent of Code\AdventOfCode\AdventOfCode\2020\Inputs\Day11.txt";
@@ -13,7 +18,7 @@ namespace AdventOfCode2020
         {
             var initialState = File.ReadAllLines(inputPath).ToList();
 
-            var finalState = CalculateFinalState(initialState);
+            var finalState = CalculateFinalState(initialState, 4, OccupiedRule.Adjacent);
 
             var answer = CountOccupiedSeats(finalState);
 
@@ -21,11 +26,13 @@ namespace AdventOfCode2020
         }
         public static int Problem2()
         {
-            var input = File.ReadAllLines(inputPath).ToList();
+            var initialState = File.ReadAllLines(inputPath).ToList();
 
+            var finalState = CalculateFinalState(initialState, 5, OccupiedRule.LineOfSight);
 
+            var answer = CountOccupiedSeats(finalState);
 
-            return -1;
+            return answer;
         }
 
         public static int CountOccupiedSeats(List<string> state)
@@ -41,22 +48,25 @@ namespace AdventOfCode2020
             return occupiedSeats;
         }
 
-        public static List<string> CalculateFinalState(List<string> initialState)
+        public static List<string> CalculateFinalState(List<string> initialState, int occupiedLimit, OccupiedRule rule)
         {
             List<string> currentState;
             List<string> nextState = new List<string>(initialState);
 
+            long turnCounter = 0;
+
             do
             {
                 currentState = new List<string>(nextState);
-                nextState = CalculateNextState(currentState);
+                nextState = CalculateNextState(currentState, occupiedLimit, rule);
+                turnCounter++;
             }
             while (!nextState.SequenceEqual(currentState));
 
             return nextState;
         }
 
-        public static List<string> CalculateNextState(List<string> currentState)
+        public static List<string> CalculateNextState(List<string> currentState, int occupiedLimit, OccupiedRule rule)
         {
             var nextState = new List<string>();
 
@@ -67,7 +77,7 @@ namespace AdventOfCode2020
 
                 for (int seatNumber = 0; seatNumber < row.Length; seatNumber++)
                 {
-                    nextRow += CalculateNextSeatState(currentState, rowNumber, seatNumber);
+                    nextRow += CalculateNextSeatState(currentState, rowNumber, seatNumber, occupiedLimit, rule);
                 }
 
                 nextState.Add(nextRow);
@@ -76,22 +86,26 @@ namespace AdventOfCode2020
             return nextState;
         }
 
-        private static char CalculateNextSeatState(List<string> currentState, int rowNumber, int seatNumber)
+        private static char CalculateNextSeatState(
+            List<string> currentState, int rowNumber, int seatNumber, int occupiedLimit, OccupiedRule rule)
         {
             var currentSeat = currentState[rowNumber][seatNumber];
+            int occupiedSeats;
 
             switch (currentSeat)
             {
                 case '.':
                     return '.';
                 case 'L':
-                    return CountAdjacentOccupiedSeats(currentState, rowNumber, seatNumber) == 0
-                        ? '#'
-                        : 'L';
+                    occupiedSeats = (rule == OccupiedRule.Adjacent)
+                        ? CountAdjacentOccupiedSeats(currentState, rowNumber, seatNumber)
+                        : CountLineOfSightOccupiedSeats(currentState, rowNumber, seatNumber);
+                    return occupiedSeats == 0 ? '#' : 'L';
                 case '#':
-                    return CountAdjacentOccupiedSeats(currentState, rowNumber, seatNumber) >= 4
-                        ? 'L'
-                        : '#';
+                    occupiedSeats = (rule == OccupiedRule.Adjacent)
+                        ? CountAdjacentOccupiedSeats(currentState, rowNumber, seatNumber)
+    :                   CountLineOfSightOccupiedSeats(currentState, rowNumber, seatNumber);
+                    return occupiedSeats >= occupiedLimit ? 'L' : '#';
                 default:
                     throw new Exception("Invalid seat state");
             }
@@ -144,6 +158,181 @@ namespace AdventOfCode2020
             {
                 occupiedSeats += (currentState[rowNumber][seatNumber + 1] == '#') ? 1 : 0;
             }
+
+            return occupiedSeats;
+        }
+
+        public static int CountLineOfSightOccupiedSeats(List<string> currentState, int rowNumber, int seatNumber)
+        {
+            int occupiedSeats = 0;
+            int maxRow = currentState.Count;
+            int maxSeat = currentState[0].Length;
+
+            int i, j;
+
+            # region right
+            j = seatNumber + 1;
+            while (j < maxSeat)
+            {
+                if (currentState[rowNumber][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[rowNumber][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                j++;
+            }
+            #endregion
+
+            #region left
+            j = seatNumber - 1;
+            while (j >= 0)
+            {
+                if (currentState[rowNumber][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[rowNumber][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                j--;
+            }
+            #endregion
+
+            #region top
+            i = rowNumber - 1;
+            while (i >= 0)
+            {
+                if (currentState[i][seatNumber] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][seatNumber] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i--;
+            }
+            #endregion
+
+            #region bottom
+            i = rowNumber + 1;
+            while (i < maxRow)
+            {
+                if (currentState[i][seatNumber] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][seatNumber] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i++;
+            }
+            #endregion
+
+            #region bottom-right
+            i = rowNumber + 1;
+            j = seatNumber + 1;
+
+            while (i < maxRow && j < maxSeat)
+            {
+                if (currentState[i][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i++;
+                j++;
+            }
+            #endregion
+
+            #region bottom-left
+            i = rowNumber + 1;
+            j = seatNumber - 1;
+
+            while (i < maxRow && j >= 0)
+            {
+                if (currentState[i][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i++;
+                j--;
+            }
+            #endregion
+
+            #region top-right
+             i = rowNumber - 1;
+            j = seatNumber + 1;
+
+            while (i >= 0 && j < maxSeat)
+            {
+                if (currentState[i][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i--;
+                j++;
+            }
+            #endregion
+
+            #region top-left
+            i = rowNumber - 1;
+            j = seatNumber - 1;
+
+            while (i >= 0 && j >= 0)
+            {
+                if (currentState[i][j] == 'L')
+                {
+                    break;
+                }
+
+                if (currentState[i][j] == '#')
+                {
+                    occupiedSeats++;
+                    break;
+                }
+
+                i--;
+                j--;
+            }
+            #endregion
 
             return occupiedSeats;
         }
