@@ -1,6 +1,7 @@
 ﻿using Xunit;
+using AdventOfCode2019;
 
-namespace AdventOfCode2019
+namespace AdventOfCodeTests2019
 {
     public class Day03Tests
     {

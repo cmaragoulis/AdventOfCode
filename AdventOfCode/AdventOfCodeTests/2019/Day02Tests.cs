@@ -1,6 +1,7 @@
+using AdventOfCode2019;
 using Xunit;
 
-namespace AdventOfCodeTests
+namespace AdventOfCodeTests2019
 {
     public class Day02Tests
     {
@@ -15,7 +16,7 @@ namespace AdventOfCodeTests
             // Arrange
 
             // Act
-            var actualOutput = string.Join(',', AdventOfCode2019.Day02.ExecuteProgram(input));
+            var actualOutput = string.Join(',', Day02.ExecuteProgram(input));
 
             // Assert
             Assert.Equal(expectedOutput, actualOutput);

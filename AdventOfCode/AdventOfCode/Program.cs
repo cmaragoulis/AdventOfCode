@@ -9,8 +9,9 @@ namespace AdventOfCode
         {
             var sw = Stopwatch.StartNew();
 
-            var answer = AdventOfCode2020.Day24.Problem2();
 
+            var answer = AdventOfCode2020.Day21.Problem1();
+            
             sw.Stop();
 
             Console.WriteLine($"The answer is {answer}{Environment.NewLine}Time: {sw.ElapsedMilliseconds}ms");

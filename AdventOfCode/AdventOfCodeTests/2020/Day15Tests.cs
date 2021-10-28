@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace AdventOfCodeTests._2020
+namespace AdventOfCodeTests2020
 {
     public class Day15Tests
     {
